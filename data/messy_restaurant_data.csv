@@ -1,0 +1,8 @@
+OrderID,Customer,Date,Dish1,Price1,Qty1,Dish2,Price2,Qty2,Dish3,Price3,Qty3,Dish4,Price4,Qty4,Total
+1001,Alice,2026-06-20,Vetkoek,45,1,Bunny Chow,119,1,Malva Pudding,58,1,Rooibos Tea,35,2,357
+1002,Bob,2026-06-20,Boerewors Roll,85,2,Craft Lager,58,2,Koeksister,38,2,,,,,362
+1003,Carol,2026-06-21,Peri-Peri Wings,89,1,Prawn Curry,189,1,Amarula Cheesecake,72,1,White Wine,85,2,520
+1004,David,2026-06-21,Chakalaka Burger,105,1,Pap & Wors,95,1,Milk Tart,45,1,Craft Lager,58,1,303
+1005,Amara,2026-06-22,Veg Bunny,95,1,Veg Bobotie,98,1,Peppermint Crisp,52,1,Rooibos Tea,35,1,Mango Lassi,42,1,322
+1006,Alice,2026-06-22,Braai Platter,299,1,Red Wine,85,2,Malva Pudding,58,2,,,,,585
+1007,Zara,2026-06-27,Chicken Schnitzel,135,1,Still Water,22,1,,,,,,,157
