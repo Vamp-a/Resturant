@@ -1,0 +1,38 @@
+# ============================================================
+# Digital Restaurant - Python Requirements
+# ============================================================
+#
+# This project does not require any third-party packages.
+# All imports in the Python codebase are from:
+#   - Python Standard Library
+#   - Local project modules
+#
+# ------------------------------------------------------------
+# Python version requirement
+# ------------------------------------------------------------
+# Recommended: Python >= 3.10
+# (Project uses modern type hints such as list[dict] and dict | None)
+#
+# ------------------------------------------------------------
+# Standard library modules used (for documentation)
+# ------------------------------------------------------------
+# datetime     -> timestamps for orders/receipts
+# typing       -> type annotations
+# collections  -> deque in data_structures.py
+#
+# ------------------------------------------------------------
+# Local modules used (not pip-installable dependencies)
+# ------------------------------------------------------------
+# models.py
+# utils.py
+# data_structures.py
+# main.py
+#
+# ------------------------------------------------------------
+# Installation
+# ------------------------------------------------------------
+# python -m venv .venv
+# .venv\Scripts\python -m pip install -r requirements.txt
+#
+# No package entries are listed below because no external dependencies
+# are required at this time.
