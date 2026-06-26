@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ubuntu Kitchen – Digital Restaurant</title>
+  
+  <!-- 👇 LINK TO EXTERNAL CSS ,,,, -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- ── NAVIGATION ───────────────────────────────────────── -->
+<nav>
+  <div class="nav-logo">Ubuntu Kitchen</div>
+  <ul class="nav-links">
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#reserve">Reservations</a></li>
+    <li><a href="#team">Our Team</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ── HERO ─────────────────────────────────────────────── -->
+<section class="hero">
+  <h1>Ubuntu Kitchen</h1>
+  <p class="tagline">Authentic South African flavours. Community at the table.</p>
+  <div class="hero-ctas">
+    <a href="#menu" class="btn btn-primary">View Menu</a>
+    <a href="#reserve" class="btn btn-outline">Book a Table</a>
+  </div>
+</section>
+
+<!-- ── MENU ─────────────────────────────────────────────── -->
+<div id="menu">
+  <div class="section">
+    <h2 class="section-title">Our Menu</h2>
+    <p class="section-sub">Click any dish to add it to your order.</p>
+
+    <div class="menu-tabs">
+      <button class="tab-btn active" onclick="filterMenu('all', this)">All</button>
+      <button class="tab-btn" onclick="filterMenu('starter', this)">Starters</button>
+      <button class="tab-btn" onclick="filterMenu('main', this)">Mains</button>
+      <button class="tab-btn" onclick="filterMenu('dessert', this)">Desserts</button>
+      <button class="tab-btn" onclick="filterMenu('drink', this)">Drinks</button>
+    </div>
+
+    <div class="menu-grid" id="menuGrid"></div>
+  </div>
+</div>
+
+<!-- ── RESERVATION FORM ──────────────────────────────────── -->
+<div id="reserve" style="background: rgba(0,0,0,0.2);">
+  <div class="section">
+    <h2 class="section-title">Book a Table</h2>
+    <p class="section-sub">Reserve your spot. We confirm within 24 hours.</p>
+
+    <div class="form-section">
+      <div class="form-grid" id="reservationForm">
+        <div class="form-group">
+          <label for="firstName">First Name *</label>
+          <input type="text" id="firstName" placeholder="Sipho" />
+          <span class="field-error" id="firstNameErr"></span>
+        </div>
+        <div class="form-group">
+          <label for="lastName">Last Name *</label>
+          <input type="text" id="lastName" placeholder="Dlamini" />
+          <span class="field-error" id="lastNameErr"></span>
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address *</label>
+          <input type="email" id="email" placeholder="sipho@example.co.za" />
+          <span class="field-error" id="emailErr"></span>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number *</label>
+          <input type="tel" id="phone" placeholder="0821234567" />
+          <span class="field-error" id="phoneErr"></span>
+        </div>
+        <div class="form-group">
+          <label for="date">Date *</label>
+          <input type="date" id="date" />
+          <span class="field-error" id="dateErr"></span>
+        </div>
+        <div class="form-group">
+          <label for="time">Time *</label>
+          <select id="time">
+            <option value="">Select a time</option>
+            <option>11:00</option><option>11:30</option>
+            <option>12:00</option><option>12:30</option>
+            <option>13:00</option><option>13:30</option>
+            <option>18:00</option><option>18:30</option>
+            <option>19:00</option><option>19:30</option>
+            <option>20:00</option><option>20:30</option>
+          </select>
+          <span class="field-error" id="timeErr"></span>
+        </div>
+        <div class="form-group">
+          <label for="guests">Number of Guests *</label>
+          <select id="guests">
+            <option value="">Select</option>
+            <option>1</option><option>2</option><option>3</option>
+            <option>4</option><option>5</option><option>6</option>
+            <option>7</option><option>8</option>
+            <option value="9+">9+ (please call us)</option>
+          </select>
+          <span class="field-error" id="guestsErr"></span>
+        </div>
+        <div class="form-group">
+          <label for="occasion">Special Occasion</label>
+          <select id="occasion">
+            <option value="">None</option>
+            <option>Birthday</option>
+            <option>Anniversary</option>
+            <option>Business Dinner</option>
+            <option>Date Night</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group full">
+          <label for="notes">Special Requests</label>
+          <textarea id="notes" rows="3" placeholder="Dietary requirements, seating preferences, accessibility needs..."></textarea>
+        </div>
+      </div>
+
+      <button class="btn btn-primary btn-submit" onclick="submitReservation()">
+        Confirm Reservation
+      </button>
+
+      <div class="success-msg" id="successMsg">
+        🎉 Your reservation has been received!<br/>
+        We'll confirm via email within 24 hours. See you soon!
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── TEAM ──────────────────────────────────────────────── -->
+<div id="team">
+  <div class="section">
+    <h2 class="section-title">Our Team</h2>
+    <p class="section-sub">The people behind Ubuntu Kitchen.</p>
+    <div class="people-list">
+      <div class="person-row">
+        <div><div class="person-name">Sipho Dlamini</div><div class="person-role">Head Chef & Co-Founder</div></div>
+        <div class="person-quote">"Food is the original technology."</div>
+      </div>
+      <div class="person-row">
+        <div><div class="person-name">Zanele Khumalo</div><div class="person-role">Sous Chef</div></div>
+        <div class="person-quote">"Every dish tells a story."</div>
+      </div>
+      <div class="person-row">
+        <div><div class="person-name">Lerato Mokoena</div><div class="person-role">Front of House Manager</div></div>
+        <div class="person-quote">"Hospitality is a mindset, not a job."</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── FOOTER ────────────────────────────────────────────── -->
+<footer id="contact">
+  <p><strong style="color:var(--gold)">Ubuntu Kitchen</strong> · 14 Innovation Ave, Bryanston</p>
+  <p style="margin-top:0.5rem">📞 011 123 4567 · 📧 hello@ubuntukitchen.co.za</p>
+  <p style="margin-top:1rem; font-size:0.75rem">
+    Built for GKSS Richfield Bryanston – Exam Prep Workshop · Web Development Module
+  </p>
+</footer>
+
+<!-- ── CART SIDEBAR ──────────────────────────────────────── -->
+<div class="cart-sidebar" id="cartSidebar">
+  <div class="cart-header" onclick="toggleCart()">
+    <span>🛒 Your Order</span>
+    <span id="cartBadge">0 items</span>
+  </div>
+  <div class="cart-items" id="cartItems">
+    <div class="cart-empty">Your order is empty.<br/>Add dishes from the menu above.</div>
+  </div>
+  <div class="cart-footer" id="cartFooter" style="display:none;">
+    <div class="cart-totals" id="cartTotals"></div>
+    <button class="btn btn-primary" style="width:100%; padding:0.6rem;"
+            onclick="placeOrder()">Place Order</button>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<!-- 👇 LINK TO EXTERNAL JAVASCRIPT (we will build this) -->
+<script src="js/app.js"></script>
+
+</body>
+</html>
