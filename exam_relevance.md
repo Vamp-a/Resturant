@@ -1,0 +1,1 @@
+This repo is a combination of alot of the various topics and lanagues that you discussed in class. It is not a complete project, but it is a good starting point for a project that you can build upon.
